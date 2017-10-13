@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>OAuth2 Authorization | YaMailBot</title>
+  </head>
+  <body>
+    <script>
+      var hash = document.location.hash;
+      var accessToken = /access_token=([^&]+)/.exec(hash)[1];
+      var error = /error=([^&]+)/.exec(hash)[1];
+      var error_description = /error_description=([^&]+)/.exec(hash)[1];
+      var state = /state=([^&]+)/.exec(hash)[1];
+      var expires_in = /expires_in=([^&]+)/.exec(hash)[1];
+      var token_type = /token_type=([^&]+)/.exec(hash)[1];
+
+      //window.location.replace("https://t.me/YaMailBot?start=" + accessToken);
+      
+      console.log("accessToken: " + accessToken);
+      console.log("error: " + error);
+      console.log("error_description: " + error_description);
+      console.log("state: " + state);
+      console.log("expires_in: " + expires_in);
+      console.log("token_type: " + token_type);
+    </script>
+  </body>
+</html>
